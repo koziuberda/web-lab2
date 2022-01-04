@@ -14,9 +14,10 @@ function getTransporter() {
   });
 }
 
+const transport = getTransporter();
+
 async function sendMail(options) {
   try {
-    const transport = getTransporter();
     await transport.sendMail(options);
     return { success: true };
   } catch (error) {
