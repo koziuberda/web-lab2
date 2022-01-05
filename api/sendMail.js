@@ -5,8 +5,8 @@ require("dotenv").config();
 
 function getTransporter() {
   return createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
+    host: process.env.HOST,
+    port: process.env.PORT,
     secure: false,
     auth: {
       user: process.env.EMAIL_ADRESS,
