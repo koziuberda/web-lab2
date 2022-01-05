@@ -1,3 +1,5 @@
+@import url("/variables.css");
+
 html,
 body {
   position: relative;
@@ -6,7 +8,7 @@ body {
 }
 
 body {
-  color: #333;
+  color: var(--dark);
   margin: 0;
   padding: 8px;
   box-sizing: border-box;
@@ -15,7 +17,7 @@ body {
 }
 
 a {
-  color: rgb(0, 100, 200);
+  color: var(--a-color);
   text-decoration: none;
 }
 
@@ -24,7 +26,7 @@ a:hover {
 }
 
 a:visited {
-  color: rgb(0, 80, 160);
+  color: var(--a-visited-color);
 }
 
 label {
@@ -41,28 +43,28 @@ textarea {
   padding: 0.4em;
   margin: 0 0 0.5em 0;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: 1px solid var(--mostly-light);
   border-radius: 2px;
 }
 
 input:disabled {
-  color: #ccc;
+  color: var(--mostly-light);
 }
 
 button {
-  color: #333;
-  background-color: #f4f4f4;
+  color: var(--dark);
+  background-color: var(--button-background);
   outline: none;
 }
 
 button:disabled {
-  color: #999;
+  color: var(--button-disabled-color);
 }
 
 button:not(:disabled):active {
-  background-color: #ddd;
+  background-color: var(--button-active-background);
 }
 
 button:focus {
-  border-color: #666;
+  border-color: var(--button-focus-border-color);
 }

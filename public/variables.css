@@ -1,0 +1,10 @@
+:root {
+  --mostly-light: #ccc;
+  --dark: #333;
+  --a-color: rgb(0, 100, 200);
+  --a-visited-color: rgb(0, 80, 160);
+  --button-background: #f4f4f4;
+  --button-disabled-color: #999;
+  --button-active-background: #ddd;
+  --button-focus-border-color: #666;
+}
