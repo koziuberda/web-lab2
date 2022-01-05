@@ -4,17 +4,24 @@
   let resultText = writable("");
   const formData = {};
   const submit = async () => {
-    isLoading = true;
-    const response = await fetch("/api/sendMail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formData),
-    });
-    const result = await response.json();
-    resultText.set(result.result.success ? "Success!" : "Failure");
-    isLoading = false;
+    try {
+      isLoading = true;
+      const response = await fetch("/api/sendMail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      resultText.set(
+        result.result.success ? "Success!" : result.errors.join(";"),
+      );
+    } catch (e) {
+      resultText.set("An error occurred: " + e.message);
+    } finally {
+      isLoading = false;
+    }
   };
 </script>
 
