@@ -1,7 +1,6 @@
 <script>
-  import { writable } from "svelte/store";
   let isLoading = false;
-  let resultText = writable("");
+  let resultText = "";
   const formData = {};
   const submit = async () => {
     try {
