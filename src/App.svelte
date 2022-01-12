@@ -13,11 +13,9 @@
         body: JSON.stringify(formData),
       });
       const result = await response.json();
-      resultText.set(
-        result.result.success ? "Success!" : result.errors.join(";"),
-      );
+      resultText = result.result.success ? "Success!" : result.errors.join(";");
     } catch (e) {
-      resultText.set("An error occurred: " + e.message);
+      resultText = "An error occurred: " + e.message;
     } finally {
       isLoading = false;
     }
@@ -58,7 +56,7 @@
       <input type="submit" disabled={isLoading} />
     </form>
     <div>
-      <p>{$resultText}</p>
+      <p>{resultText}</p>
     </div>
   {/if}
 </main>
